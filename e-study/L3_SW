@@ -1,0 +1,198 @@
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+
+Switch>Vlan 1 10.1.1.254/24
+            ^
+% Invalid input detected at '^' marker.
+	
+Switch>Vlan 10 10.1.10.254/24
+            ^
+% Invalid input detected at '^' marker.
+	
+Switch>Vlan 20 10.1.20.254/24
+            ^
+% Invalid input detected at '^' marker.
+	
+Switch>Vlan 30 10.1.30.254/24
+            ^
+% Invalid input detected at '^' marker.
+	
+Switch>
+Switch>
+Switch>en
+Switch#
+Switch#
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#Vlan 1 10.1.1.254/24
+                      ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#Vlan 10 10.1.10.254/24
+                       ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#Vlan 20 10.1.20.254/24
+                       ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#Vlan 30 10.1.30.254/24
+                       ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#
+Switch(config)#
+Switch(config)#
+Switch(config)#
+Switch(config)#
+Switch(config)#
+Switch(config)#
+Switch(config)#int ran f0/1 - 2
+Switch(config-if-range)#sw mo acc
+Switch(config-if-range)#sw acc vlan 20
+% Access VLAN does not exist. Creating vlan 20
+Switch(config-if-range)#int ran f0/5 - 8
+Switch(config-if-range)#sw mo acc
+Switch(config-if-range)#sw mo tr
+
+
+
+
+Switch(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to up
+
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#sp
+Switch(config-if-range)#spa
+Switch(config-if-range)#spanning-tree ?
+  bpduguard  Don't accept BPDUs on this interface
+  cost       Change an interface's spanning tree port path cost
+  guard      Change an interface's spanning tree guard mode
+  link-type  Specify a link type for spanning tree protocol use
+  portfast   Enable an interface to move directly to forwarding on link up
+  vlan       VLAN Switch Spanning Tree
+Switch(config-if-range)#spanning-tree portfa
+Switch(config-if-range)#spanning-tree portfast 
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/5 but will only
+have effect when the interface is in a non-trunking mode.
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/6 but will only
+have effect when the interface is in a non-trunking mode.
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/7 but will only
+have effect when the interface is in a non-trunking mode.
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/8 but will only
+have effect when the interface is in a non-trunking mode.
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#exit
+Switch(config)#int vlan 1
+Switch(config-if)#ip add 1.10.1.254 255.255.255.0
+Switch(config-if)#no sh
+
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+Switch(config-if)#
+Switch(config-if)#int vlan 10
+Switch(config-if)#ip add 10.1.10.254 255.255.255.0
+Switch(config-if)#no sh
+Switch(config-if)#int vlan 20
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan20, changed state to up
+
+Switch(config-if)#
+Switch(config-if)#ip add 10.1.20.254 255.255.255.0
+Switch(config-if)#no sh
+Switch(config-if)#
+Switch(config-if)#int vlan 30
+Switch(config-if)#ip add 10.1.30.254 255.255.255.0
+Switch(config-if)#no sh
+Switch(config-if)#exit
+Switch(config)#ip router
+                       ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#ip router 
+                       ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#ip routin
+Switch(config)#ip routing 
+Switch(config)#route rip
+Switch(config-router)#ver 2
+Switch(config-router)#net 10.0.0.0
+Switch(config-router)#no au
+Switch(config-router)#no auto-summary 
+Switch(config-router)#
+
+
+
+
+
+
+
+
+Switch con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
